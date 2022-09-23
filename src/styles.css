@@ -3,6 +3,7 @@ font-family: 'Raleway Dots', cursive;
 font-family: 'Rye', cursive; */
 
 body {
+  background: url("../assets/bg-image.png");
   background-color: #dda15e;
   box-sizing: border-box;
   font-family: "Oxygen", sans-serif;
@@ -23,6 +24,10 @@ button {
 
 button:active {
   transform: scale(0.98);
+}
+
+button:disabled:active {
+  transform: scale(1);
 }
 
 body > header {
@@ -51,10 +56,11 @@ body > main {
 
 aside {
   height: 50vh;
-  background-color: #fefae0;
+  background-color: #edceab;
   padding: 2rem;
   border-radius: 1rem;
   width: 20%;
+  box-shadow: 0 0 8px #bb3e03;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
@@ -81,6 +87,7 @@ aside > main > * {
   display: flex;
   justify-content: space-between;
   font-family: "Rye", cursive;
+  margin-bottom: 0.75rem;
 }
 
 aside > main input[type="checkbox"] {
@@ -142,7 +149,7 @@ aside > main input[type="checkbox"]:checked ~ label::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #14213d;
+  background-color: #621708;
   border: 4px ridge #ffb703;
   box-shadow: 0 0 12px #344e41;
   border-radius: 1rem;
@@ -196,14 +203,16 @@ aside > main input[type="checkbox"]:checked ~ label::after {
 }
 
 #slot-machine > .square-part {
-  width: 54%;
+  /* background: url(https://i.pinimg.com/736x/90/72/c9/9072c9120fb070d8894aaa72483b4ac9.jpg);
+  background-size: contain; */
+  width: 40%;
   height: 20vh;
   position: absolute;
   bottom: -50%;
-  left: 23%;
+  left: 30%;
 }
 
-#slot-machine > .square-part > div {
+#slot-machine > .square-part {
   align-items: flex-end;
 }
 
@@ -220,7 +229,7 @@ aside > main input[type="checkbox"]:checked ~ label::after {
 }
 
 #slot-machine button:hover {
-  background-color: hsl(221, 51%, 10%);
+  background-color: #9b2226;
   color: #ffb703;
   border: 1px dotted #ffb703;
 }
@@ -228,4 +237,8 @@ aside > main input[type="checkbox"]:checked ~ label::after {
 #run-btn {
   padding: 0.75rem 2rem;
   margin-bottom: 0.75rem;
+}
+
+.hidden {
+  visibility: hidden;
 }
