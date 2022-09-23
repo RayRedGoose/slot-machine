@@ -1,0 +1,231 @@
+/* font-family: 'Oxygen', sans-serif;
+font-family: 'Raleway Dots', cursive;
+font-family: 'Rye', cursive; */
+
+body {
+  background-color: #dda15e;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+body > header {
+  background-color: #bb3e03;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 0 12px #344e41;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Rye", cursive;
+  letter-spacing: 0.25em;
+  color: #fefae0;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #14213d;
+  color: #ffb703;
+}
+
+body > main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+aside {
+  height: 50vh;
+  background-color: #fefae0;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 20%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+aside > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #344e41;
+  color: #344e41;
+  font-size: 1.25rem;
+}
+
+aside > main {
+  height: 90%;
+  padding: 1rem;
+}
+
+aside > main > * {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Rye", cursive;
+}
+
+aside > main input[type="checkbox"] {
+  position: absolute;
+}
+
+aside > main input[type="checkbox"] ~ label {
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+}
+
+aside > main input[type="checkbox"] ~ label::before {
+  content: "";
+  position: absolute;
+  background-color: #fefae0;
+  width: 1rem;
+  height: 1rem;
+  left: 0;
+  border: 1px solid #344e41;
+  border-radius: 0.15rem;
+  transition: background-color 0.2s;
+}
+
+aside > main input[type="checkbox"] ~ label::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  transition: top 0.5s;
+}
+
+aside > main input[type="checkbox"]:checked ~ label::before {
+  background-color: #344e41;
+}
+
+aside > main input[type="checkbox"]:checked ~ label::after {
+  content: "\2717";
+  left: 4px;
+  top: -2px;
+  color: #dad7cd;
+}
+
+#slot-machine {
+  width: 50%;
+  position: relative;
+}
+
+.dotted-border {
+  width: 95%;
+  height: 94%;
+  border: 2px dotted #ffb703;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#slot-machine > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #14213d;
+  border: 4px ridge #ffb703;
+  box-shadow: 0 0 12px #344e41;
+  border-radius: 1rem;
+}
+
+#slot-machine > .radius-part {
+  width: 60%;
+  height: 30vh;
+  border-radius: 100%;
+  position: absolute;
+  left: 20%;
+  top: -75%;
+}
+
+#slot-machine > .radius-part > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+#slot-machine > .radius-part p {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: #dad7cd;
+  text-shadow: 0 0 0.5em #ffb703;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+#slot-machine > .radius-part p::before {
+  content: "\2605	 \2605	 \2605";
+  position: absolute;
+  top: 1em;
+  left: calc(50% - 38px);
+  font-size: 1.25rem;
+}
+
+#slot-machine > .center-part {
+  background-color: #9b2226;
+  width: 85%;
+  height: 20vh;
+  border-radius: 1rem;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+}
+
+#slot-machine > .center-part h1 {
+  font-size: 3rem;
+}
+
+#slot-machine > .square-part {
+  width: 54%;
+  height: 20vh;
+  position: absolute;
+  bottom: -50%;
+  left: 23%;
+}
+
+#slot-machine > .square-part > div {
+  align-items: flex-end;
+}
+
+#slot-machine button {
+  background-color: #ffb703;
+  color: #14213d;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 2px #ffb703;
+}
+
+#slot-machine button:hover {
+  background-color: hsl(221, 51%, 10%);
+  color: #ffb703;
+  border: 1px dotted #ffb703;
+}
+
+#run-btn {
+  padding: 0.75rem 2rem;
+  margin-bottom: 0.75rem;
+}
