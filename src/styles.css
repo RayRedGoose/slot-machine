@@ -20,21 +20,47 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.25rem;
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
 button:disabled:active {
   transform: scale(1);
 }
 
-body > header {
+.page-header {
   background-color: #bb3e03;
   padding: 1.25rem;
   text-align: center;
   box-shadow: 0 0 12px #344e41;
+}
+
+.page-header button {
+  position: absolute;
+  color: #ffb703;
+  left: 2rem;
+  top: 1.25rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header button img {
+  height: 32px;
+  width: 32px;
+}
+
+#icon {
+  font-size: 2rem;
+  margin-right: 0.25rem;
 }
 
 h1 {
@@ -54,19 +80,24 @@ body > main {
   height: 80vh;
 }
 
-aside {
+.names-popup {
   height: 50vh;
   background-color: #edceab;
   padding: 2rem;
   border-radius: 1rem;
-  width: 20%;
-  box-shadow: 0 0 8px #bb3e03;
-  /* display: flex;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 0 4px #14213d;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; */
+  justify-content: space-between;
 }
 
-aside > header {
+.names-popup > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,12 +108,12 @@ aside > header {
   font-size: 1.25rem;
 }
 
-aside > main {
-  height: 90%;
+.names-popup > main {
+  flex: 1;
   padding: 1rem;
 }
 
-aside > main > * {
+.names-popup > main > * {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -90,17 +121,17 @@ aside > main > * {
   margin-bottom: 0.75rem;
 }
 
-aside > main input[type="checkbox"] {
+.names-popup > main input[type="checkbox"] {
   position: absolute;
 }
 
-aside > main input[type="checkbox"] ~ label {
+.names-popup > main input[type="checkbox"] ~ label {
   cursor: pointer;
   padding-left: 24px;
   position: relative;
 }
 
-aside > main input[type="checkbox"] ~ label::before {
+.names-popup > main input[type="checkbox"] ~ label::before {
   content: "";
   position: absolute;
   background-color: #fefae0;
@@ -112,26 +143,45 @@ aside > main input[type="checkbox"] ~ label::before {
   transition: background-color 0.2s;
 }
 
-aside > main input[type="checkbox"] ~ label::after {
+.names-popup > main input[type="checkbox"] ~ label::after {
   content: "";
   position: absolute;
   top: -1rem;
   transition: top 0.5s;
 }
 
-aside > main input[type="checkbox"]:checked ~ label::before {
+.names-popup > main input[type="checkbox"]:checked ~ label::before {
   background-color: #344e41;
 }
 
-aside > main input[type="checkbox"]:checked ~ label::after {
+.names-popup > main input[type="checkbox"]:checked ~ label::after {
   content: "\2717";
   left: 4px;
   top: -2px;
   color: #dad7cd;
 }
 
+.names-popup > form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #344e41;
+}
+
+.names-popup > form > input {
+  font-size: 14px;
+  padding: 0.5rem;
+  background-color: #fefae0;
+  border: 1px solid #621708;
+  border-radius: 0.25rem;
+  flex: 1;
+  margin-right: 1rem;
+}
+
 #slot-machine {
-  width: 50%;
+  max-width: 800px;
+  width: 100%;
   position: relative;
 }
 
@@ -203,8 +253,6 @@ aside > main input[type="checkbox"]:checked ~ label::after {
 }
 
 #slot-machine > .square-part {
-  /* background: url(https://i.pinimg.com/736x/90/72/c9/9072c9120fb070d8894aaa72483b4ac9.jpg);
-  background-size: contain; */
   width: 40%;
   height: 20vh;
   position: absolute;
@@ -216,27 +264,36 @@ aside > main input[type="checkbox"]:checked ~ label::after {
   align-items: flex-end;
 }
 
-#slot-machine button {
-  background-color: #ffb703;
-  color: #14213d;
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  border-radius: 0.25rem;
-  box-shadow: 0 0 2px #ffb703;
+#slot-machine > .square-part button {
+  margin-bottom: 0.75rem;
 }
 
-#slot-machine button:hover {
+.primary-btn {
+  background-color: #ffb703;
+  color: #14213d;
+  box-shadow: 0 0 2px #ffb703;
+  padding: 0.75rem 2rem;
+}
+
+.primary-btn:hover {
   background-color: #9b2226;
   color: #ffb703;
   border: 1px dotted #ffb703;
 }
 
-#run-btn {
-  padding: 0.75rem 2rem;
-  margin-bottom: 0.75rem;
+.secondary-btn {
+  background-color: #9b2226;
+  color: #ffb703;
+  padding: 0.5rem 2rem;
+}
+
+.secondary-btn:hover {
+  background-color: hsl(358, 64%, 27%);
+}
+
+.tertiary-btn {
+  font-size: 24px;
+  color: #344e41;
 }
 
 .hidden {

@@ -12,26 +12,35 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Codystar&family=Rye&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+      }
+    </style>
   </head>
   <body>
-    <header><h1>Name Randomizer</h1></header>
+    <header class="page-header">
+      <h1>Name Randomizer</h1>
+      <button class="tertiary-btn" id="open-popup-btn">
+        <img src="../assets/duel.png" alt="" />
+      </button>
+    </header>
+
     <main>
-      <aside>
+      <aside class="names-popup">
         <header>
-          <h4>Canvas Kit Team</h4>
-          <!-- <button>x</button> -->
+          <h4>Team Members</h4>
+          <button class="tertiary-btn">&#10007;</button>
         </header>
-        <main id="all-names">
-          <!-- <div>
-            <input type="checkbox" name="raisa" id="raisa" />
-            <label for="raisa">Raisa</label>
-            <button>🗑</button>
-          </div> -->
-        </main>
-        <!-- <footer>
+        <main id="all-names"></main>
+        <form>
           <input type="text" name="name" id="name" />
-          <button>Add name</button>
-        </footer> -->
+          <button id="add-btn" class="secondary-btn">Add</button>
+        </form>
       </aside>
       <section id="slot-machine">
         <div class="radius-part">
@@ -43,12 +52,12 @@
           </div>
         </div>
         <div class="square-part">
-          <button id="run-btn">Run</button>
+          <button id="run-btn" class="primary-btn">Run</button>
         </div>
       </section>
     </main>
 
-    <script src="Name.js"></script>
+    <script src="Member.js"></script>
     <script src="Slot.js"></script>
     <script src="main.js"></script>
   </body>
