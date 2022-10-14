@@ -37,4 +37,5 @@ addNameForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const addedName = event.target.elements.name.value;
   if (addedName) slot.pushMember(addedName);
+  event.target.elements.name.value = "";
 });
